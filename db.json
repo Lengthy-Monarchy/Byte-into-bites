@@ -1,4 +1,5 @@
 {
+    "items":{
     "specials": [
         {
         "name": "Morning Muffin Medley",
@@ -27,59 +28,59 @@
         }
     ],
     "products": {
-        "cakes": {
-            "description": "Indulge in our wide range of cakes, from classic chocolate to exotic fruit flavors, each one crafted to perfection for every celebration or craving.",
-            "image_url": "https://i.pinimg.com/564x/da/9d/17/da9d172234e22fd5346867fa7cb69461.jpg",
-            "menu_items": [
-                {
-                    "name": "Classic Chocolate Cake",
-                    "image_url": "https://i.pinimg.com/564x/7a/4f/29/7a4f2959e295b29e518cd08a939fcb80.jpg"
-                },
-                {
-                    "name": "Exotic Fruit Cake",
-                    "image_url": "https://i.pinimg.com/564x/6d/47/73/6d4773d5e8e2d84f51942ba0bff4ec27.jpg"
-                },
-                {
-                    "name": "Red Velvet Delight",
-                    "image_url": "https://i.pinimg.com/736x/b8/f8/e8/b8f8e8c093b6a74bd6be5006e9f9a8f7.jpg"
-                },
-                {
-                    "name": "Lemon Zest Cake",
-                    "image_url": "https://i.pinimg.com/564x/c9/97/d9/c997d97239088570b67efd48f36794ac.jpg"
-                },
-                {
-                    "name": "Vanilla Bean Dream",
-                    "image_url": "https://i.pinimg.com/564x/46/41/9b/46419bb4d5be69778dd247c2ddd3f0bc.jpg"
-                }
-            ]
-        },
-        "donuts": {
-            "description": "Dive into our delicious donuts, with options ranging from sugary glazes to rich fillings, ideal for a delightful treat anytime.",
-            "image_url": "https://i.pinimg.com/564x/61/e6/dd/61e6dde5365dc2c973869634189ef265.jpg",
-            "menu_items": [
-                {
-                    "name": "Glazed Donut",
-                    "image_url": "https://i.pinimg.com/564x/66/75/fe/6675fe80cec7c9ae75aedeb53a20134d.jpg"
-                },
-                {
-                    "name": "Chocolate Filled Donut",
-                    "image_url": "https://i.pinimg.com/564x/dd/69/8c/dd698c6f82398876d125509ac5d196bb.jpg"
-                },
-                {
-                    "name": "Strawberry Frosted",
-                    "image_url": "https://i.pinimg.com/564x/db/88/e5/db88e5a739ff58905afc5aaa3f92d6b5.jpg"
-                },
-                {
-                    "name": "Maple Bacon Donut",
-                    "image_url": "https://i.pinimg.com/564x/2d/0b/67/2d0b67d190d1dd6f47f3bdf955964dbb.jpg"
-                },
-                {
-                    "name": "Cinnamon Sugar Twist",
-                    "image_url": "https://i.pinimg.com/564x/22/f9/cf/22f9cff981b8f2f697985bc9e3487c5b.jpg"
-                }
-            ]
-        },
-        "pastries": {
+    "cakes": {
+        "description": "Indulge in our wide range of cakes, from classic chocolate to exotic fruit flavors, each one crafted to perfection for every celebration or craving.",
+        "image_url": "https://i.pinimg.com/564x/da/9d/17/da9d172234e22fd5346867fa7cb69461.jpg",
+        "menu_items": [
+            {
+                "name": "Classic Chocolate Cake",
+                "image_url": "https://i.pinimg.com/564x/7a/4f/29/7a4f2959e295b29e518cd08a939fcb80.jpg"
+            },
+            {
+                "name": "Exotic Fruit Cake",
+                "image_url": "https://i.pinimg.com/564x/6d/47/73/6d4773d5e8e2d84f51942ba0bff4ec27.jpg"
+            },
+            {
+                "name": "Red Velvet Delight",
+                "image_url": "https://i.pinimg.com/736x/b8/f8/e8/b8f8e8c093b6a74bd6be5006e9f9a8f7.jpg"
+            },
+            {
+                "name": "Lemon Zest Cake",
+                "image_url": "https://i.pinimg.com/564x/c9/97/d9/c997d97239088570b67efd48f36794ac.jpg"
+            },
+            {
+                "name": "Vanilla Bean Dream",
+                "image_url": "https://i.pinimg.com/564x/46/41/9b/46419bb4d5be69778dd247c2ddd3f0bc.jpg"
+            }
+        ]
+    },
+    "donuts": {
+        "description": "Dive into our delicious donuts, with options ranging from sugary glazes to rich fillings, ideal for a delightful treat anytime.",
+        "image_url": "https://i.pinimg.com/564x/61/e6/dd/61e6dde5365dc2c973869634189ef265.jpg",
+        "menu_items": [
+            {
+                "name": "Glazed Donut",
+                "image_url": "https://i.pinimg.com/564x/66/75/fe/6675fe80cec7c9ae75aedeb53a20134d.jpg"
+            },
+            {
+                "name": "Chocolate Filled Donut",
+                "image_url": "https://i.pinimg.com/564x/dd/69/8c/dd698c6f82398876d125509ac5d196bb.jpg"
+            },
+            {
+                "name": "Strawberry Frosted",
+                "image_url": "https://i.pinimg.com/564x/db/88/e5/db88e5a739ff58905afc5aaa3f92d6b5.jpg"
+            },
+            {
+                "name": "Maple Bacon Donut",
+                "image_url": "https://i.pinimg.com/564x/2d/0b/67/2d0b67d190d1dd6f47f3bdf955964dbb.jpg"
+            },
+            {
+                "name": "Cinnamon Sugar Twist",
+                "image_url": "https://i.pinimg.com/564x/22/f9/cf/22f9cff981b8f2f697985bc9e3487c5b.jpg"
+            }
+        ]
+    },
+    "pastries": {
             "description": "Savor our exquisite pastries, including flaky croissants and buttery Danishes, baked fresh daily for the ultimate indulgence.",
             "image_url": "https://i.pinimg.com/564x/23/20/88/23208869f782e7e0ff8b3356324a6286.jpg",
             "menu_items": [
@@ -210,6 +211,7 @@
             }
         ]
     }
+}
 }
 }
 

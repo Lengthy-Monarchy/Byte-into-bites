@@ -1,11 +1,8 @@
-/* Base styles */
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
 }
-
-/* Header styles */
 header {
     background-color: rgb(196, 231, 196);
     display: flex;
@@ -29,8 +26,6 @@ header ul {
 header li {
     cursor: pointer;
 }
-
-/* Carousel styles */
 .carousel {
     position: relative;
     display: flex;
@@ -57,15 +52,13 @@ header li {
 .carousel-control.right {
     right: 10px;
 }
-
-/* Menu item styles */
 .menu-item {
     width: 300px;
     border: 1px solid #ccc;
     margin: 20px;
     padding: 20px;
     text-align: center;
-    flex: 0 0 auto; /* Prevents shrinking and maintains width */
+    flex: 0 0 auto; 
 }
 
 .menu-item img {
@@ -81,7 +74,6 @@ header li {
     cursor: pointer;
 }
 
-/* Footer styles */
 footer {
     background-color: rgb(196, 231, 196);
     color: black;
@@ -112,5 +104,7 @@ footer li {
     margin-top: 20px;
     text-align: center;
 }
+
+
 
 

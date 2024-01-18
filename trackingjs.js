@@ -65,52 +65,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const specialsSection = document.getElementById("specials");
-        dbData.specials.forEach(special => {
+        dbData.items.specials.forEach(special => {
             specialsSection.appendChild(createMenuItem(special));
         });
 
         const productsSection = document.getElementById("products");
-        Object.entries(dbData.products).forEach(([categoryName, categoryData]) => {
-            const categorySection = document.createElement("div");
-            categorySection.classList.add("category-section");
+        Object.entries(dbData.items.products).forEach(([categoryName, categoryData]) => {
+            productsSection.appendChild(createCategorySection(categoryName, categoryData));
+        });
+    }
 
-            const categoryHeader = document.createElement("h2");
-            categoryHeader.textContent = categoryName;
-            categoryHeader.classList.add("category-header");
-            const itemsContainer = document.createElement("div");
-            itemsContainer.classList.add("items-container", "hidden");
-
-            categoryData.menu_items.forEach(item => {
-                itemsContainer.appendChild(createMenuItem(item, true));
+    function initializeCarouselControls() {
+        const carousels = document.querySelectorAll('.carousel');
+        carousels.forEach(carousel => {
+            const leftControl = carousel.querySelector('.carousel-control.left');
+            const rightControl = carousel.querySelector('.carousel-control.right');
+    
+            leftControl.addEventListener('click', () => {
+                carousel.scrollLeft -= 300; 
             });
-
-            categorySection.appendChild(categoryHeader);
-            categorySection.appendChild(itemsContainer);
-            productsSection.appendChild(categorySection);
-
-            categoryHeader.addEventListener("click", () => {
-                itemsContainer.classList.toggle("hidden");
+    
+            rightControl.addEventListener('click', () => {
+                carousel.scrollLeft += 300; 
             });
         });
     }
-    
-    function initializeCarouselControls() {
-
-    const carousels = document.querySelectorAll('.carousel');
-    carousels.forEach(carousel => {
-        const leftControl = carousel.querySelector('.carousel-control.left');
-        const rightControl = carousel.querySelector('.carousel-control.right');
-
-        leftControl.addEventListener('click', () => {
-            carousel.scrollLeft -= 300; 
-        });
-
-        rightControl.addEventListener('click', () => {
-            carousel.scrollLeft += 300; 
-        });
-    });
-}
 
     displaySpecialsAndProducts();
     initializeCarouselControls();
-});
+})
+
+
