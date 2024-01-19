@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     function addToCart(item) {
         cart.push(item);
         updateCartCount();
-        console.log(cart); // This is for debugging, can be removed for production
     }
 
     function createAddToCartButton(item) {
