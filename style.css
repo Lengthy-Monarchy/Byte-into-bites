@@ -1,7 +1,11 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin: 0;
-    padding: 0;
 }
 header {
     background-color: rgb(196, 231, 196);
@@ -10,6 +14,54 @@ header {
     align-items: center;
     padding: 10px 20px;
 }
+img{
+    height: 100px;
+}
+#specials{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding-top: 10px;
+    gap: 10px;
+}
+#specials  .specials-card{
+    background: azure;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border-radius: 12px;
+
+}
+#specials .specials-card img{
+    width: 100%;
+    object-fit: cover;
+    height: 50vh;
+    border-radius: 12px;
+    position: relative;
+}
+.sp{
+     text-align: center;  
+     /* <button onclick="addToCart()">Add to Basket</button> */
+
+    padding-top: 10px;
+}
+.details-section{
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+#specials h3{
+    color: #000; 
+}
+
+#specials  .details-section p{
+    width: 80%;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
 
 header h4 {
     margin: 0;
@@ -36,10 +88,6 @@ header li {
     flex: 0 0 auto; 
 }
 
-.menu-item img {
-    max-width: 100%;
-}
-
 .menu-item button {
     background-color: rgb(168, 229, 168);
     color: white;
@@ -48,7 +96,18 @@ header li {
     margin-top: 10px;
     cursor: pointer;
 }
-
+button{
+    margin: 14px;
+    background: none;
+    border: none;
+    outline: none;
+    background: rgb(168, 229, 168);
+    color: #000;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;    
+}
 footer {
     background-color: rgb(196, 231, 196);
     color: black;

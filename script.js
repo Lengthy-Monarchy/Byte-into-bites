@@ -14,20 +14,29 @@ document.addEventListener('DOMContentLoaded', async () => {
     const dbUrl = 'http://localhost:3000/items'; 
     const dbData = await fetchData(dbUrl);
 
-    if (!dbData || !dbData.items) {
-        console.error('No data or incorrect data format fetched from the server');
+    console.log(dbData)
+    if (!dbData) {
+        console.error('No data fetched from the server');
         return;
     }
 
-    let cartCount = 0;
+    let cart = [];
 
     function updateCartCount() {
-        document.getElementById('cart').innerText = `Cart (${cartCount})`;
+        document.getElementById('cart').innerText = `Cart (${cart.length})`;
     }
 
-    function addToCart() {
-        cartCount++;
+    function addToCart(item) {
+        cart.push(item);
         updateCartCount();
+        console.log(cart); // This is for debugging, can be removed for production
+    }
+
+    function createAddToCartButton(item) {
+        const button = document.createElement('button');
+        button.innerText = 'Add to Basket';
+        button.addEventListener('click', () => addToCart(item));
+        return button;
     }
 
     function toggleDropdown(id) {
@@ -36,31 +45,35 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function loadSpecials() {
-        if (!dbData.items.specials) {
+        if (!dbData.specials) {
             console.error('Specials data is not available');
             return;
         }
-        const specials = dbData.items.specials;
+        const specials = dbData.specials;
         const specialsSection = document.getElementById('specials');
 
         specials.forEach(item => {
             const itemDiv = document.createElement('div');
+            itemDiv.className = 'specials-card';
             itemDiv.innerHTML = `
-                <h3>${item.name}</h3>
-                <p>${item.description}</p>
                 <img src="${item.image_url}" alt="${item.name}">
-                <button onclick="addToCart()">Add to Basket</button>
+                <div class="details-section">
+                    <h3>${item.name}</h3>
+                    <p>${item.description}</p>
+                </div>
             `;
+            const addToCartButton = createAddToCartButton(item);
+            itemDiv.appendChild(addToCartButton);
             specialsSection.appendChild(itemDiv);
         });
     }
 
     function loadMenu() {
-        if (!dbData.items.products) {
+        if (!dbData.products) {
             console.error('Products data is not available');
             return;
         }
-        const menu = dbData.items.products;
+        const menu = dbData.products;
         const menuSection = document.getElementById('products');
 
         for (const category in menu) {
@@ -78,8 +91,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 itemDiv.innerHTML = `
                     <h4>${item.name}</h4>
                     <img src="${item.image_url}" alt="${item.name}">
-                    <button onclick="addToCart()">Add to Basket</button>
                 `;
+                const addToCartButton = createAddToCartButton(item);
+                itemDiv.appendChild(addToCartButton);
                 categoryDiv.appendChild(itemDiv);
             });
 

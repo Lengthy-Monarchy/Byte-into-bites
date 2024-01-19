@@ -3,27 +3,17 @@
     "specials": [
         {
         "name": "Morning Muffin Medley",
-        "description": "Kickstart your day with a selection of our freshly baked muffins. This special includes a mix of our top flavors like Blueberry Bliss, Chocolate Chip Charm, and Banana Nut Nirvana. Perfect for a quick breakfast or a mid-morning treat!",
+        "description": "Kickstart your day with a selection of our freshly baked muffins.",
         "image_url": "https://i.pinimg.com/564x/fc/32/2f/fc322f3fea1d4269442e7ba310048a36.jpg"
         },
         {
         "name": "Afternoon Tea-Time Trio",
-        "description": "Experience elegance with our Afternoon Tea-Time Trio. This special includes a delicate assortment of mini pastries, scones, and finger sandwiches, paired perfectly with our selection of gourmet teas. Ideal for a relaxing afternoon break.",
+        "description": "Experience elegance with our Afternoon Tea-Time Trio.",
         "image_url": "https://i.pinimg.com/564x/fb/98/e9/fb98e9b44c4e0c95e58146f947a8e608.jpg"
         },
         {
-        "name": "Cookie Carnival Extravaganza",
-        "description": "Indulge in a variety of our homemade cookies with this colorful assortment. From classic Chocolate Chip to exotic Macadamia Nut, this special offer lets you sample a wide range of our cookie creations. Great for sharing or treating yourself!",
-        "image_url": "https://i.pinimg.com/474x/83/27/f2/8327f2b4e78ba43ea01a86147980e01d.jpg"
-        },
-        {
-        "name": "Bread Basket Bonanza",
-        "description": "Discover the comforting aromas and flavors of our freshly baked breads. This special includes a selection of artisan breads such as Sourdough Sensation, Multi-Grain Marvel, and Rustic Rye. Ideal for family dinners or as a thoughtful gift.",
-        "image_url": "https://i.pinimg.com/564x/a6/8c/a7/a68ca7cf84019f842b0f77fef0a05ef9.jpg"
-        },
-        {
             "name": "Sweet Duo Delight",
-            "description": "Double the pleasure with our special cupcake pair offer. Choose any two of our gourmet cupcakes, with flavors ranging from Red Velvet Romance to Salted Caramel Surprise. It's a perfect pick-me-up or a sweet surprise for a loved one.",
+            "description": "Double the pleasure with our special cupcake pair offer.",
             "image_url": "https://i.pinimg.com/564x/38/56/d0/3856d0c7e0dfef297da8340846a20892.jpg"
         }
     ],
@@ -185,7 +175,7 @@
             }
         ]
     },
-    "muffins_and_cupcakes": {
+    "muffins&cupcakes": {
         "description": "Choose from our delightful cupcakes and muffins, ranging from richly decorated cupcakes to hearty, wholesome muffins, suitable for all occasions.",
         "image_url": "https://i.pinimg.com/564x/55/bb/5c/55bb5cba26506d79611bb8f398400834.jpg",
         "menu_items": [
