@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Sarah's Bakery</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/8095a6bfde.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -13,7 +14,12 @@
             <li>Shop Now</li>
             <li>Custom Orders</li>
             <li>About us</li>
-            <li id="cart">Cart (0)</li>
+            <div id="cart">
+                Cart (0)
+                <div id="cart-dropdown" class="dropdown-content" style="display: none;">
+                    <!-- Cart items here -->
+                </div>
+            </div>
         </ul>
     </header>
     <h2 class="sp">Specials</h2>
@@ -23,7 +29,16 @@
 
     <section id="products">
         <h2>Our Products</h2>
-        <!-- Menu items will be loaded here -->
+        <div class="products-container">
+            <!-- Category Buttons -->
+            <div class="category-buttons">
+                <!-- Buttons -->
+            </div>
+            <!-- Category Dropdowns -->
+            <div class="category-dropdowns">
+                <!-- Dropdowns  -->
+            </div>
+        </div>
     </section>
 
     <footer>

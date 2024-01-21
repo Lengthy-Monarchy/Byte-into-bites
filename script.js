@@ -14,16 +14,54 @@ document.addEventListener('DOMContentLoaded', async () => {
     const dbUrl = 'http://localhost:3000/items'; 
     const dbData = await fetchData(dbUrl);
 
-    console.log(dbData)
     if (!dbData) {
         console.error('No data fetched from the server');
         return;
     }
 
     let cart = [];
+    let currentOpenDropdown = null;
+
+    function showOrderMessage() {
+        alert("Your order is on your way!");
+    }
+
+    function clearCart() {
+        cart = [];
+        updateCartCount();
+    }
+
+    function checkout() {
+        if (cart.length === 0) {
+            alert("Your cart is empty.");
+            return;
+        }
+        showOrderMessage();
+        clearCart();
+    }
+
+    function updateCartDropdown() {
+        const cartDropdown = document.getElementById('cart-dropdown');
+        cartDropdown.innerHTML = '';
+
+        cart.forEach(item => {
+            const itemDiv = document.createElement('div');
+            itemDiv.innerText = item.name;
+            cartDropdown.appendChild(itemDiv);
+        });
+
+        if (cart.length > 0) {
+            const checkoutButton = document.createElement('button');
+            checkoutButton.innerText = 'Checkout';
+            checkoutButton.onclick = checkout;
+            checkoutButton.style = "margin-top: 10px;"; 
+            cartDropdown.appendChild(checkoutButton);
+        }
+    }
 
     function updateCartCount() {
-        document.getElementById('cart').innerText = `Cart (${cart.length})`;
+        document.getElementById('cart').firstChild.nodeValue = `Cart (${cart.length})`;
+        updateCartDropdown();
     }
 
     function addToCart(item) {
@@ -40,7 +78,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function toggleDropdown(id) {
         const element = document.getElementById(id);
-        element.style.display = element.style.display === 'none' ? 'block' : 'none';
+        if (currentOpenDropdown && currentOpenDropdown !== element) {
+            currentOpenDropdown.style.display = 'none';
+        }
+        if (element.style.display === 'none' || !element.style.display) {
+            element.style.display = 'block';
+            currentOpenDropdown = element;
+        } else {
+            element.style.display = 'none';
+            currentOpenDropdown = null;
+        }
     }
 
     function loadSpecials() {
@@ -73,12 +120,21 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
         const menu = dbData.products;
+        const categoryButtonsContainer = document.createElement('div');
+        categoryButtonsContainer.className = 'category-buttons';
+
+        const categoryDropdownsContainer = document.createElement('div');
+        categoryDropdownsContainer.className = 'category-dropdowns';
+
         const menuSection = document.getElementById('products');
+        menuSection.appendChild(categoryButtonsContainer);
+        menuSection.appendChild(categoryDropdownsContainer);
 
         for (const category in menu) {
             const categoryButton = document.createElement('button');
-            categoryButton.innerText = category;
+            categoryButton.innerHTML = `${category} <i class="fa-solid fa-circle-chevron-down"></i>`
             categoryButton.onclick = () => toggleDropdown(category);
+            categoryButtonsContainer.appendChild(categoryButton);
 
             const categoryDiv = document.createElement('div');
             categoryDiv.id = category;
@@ -87,20 +143,32 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             menu[category].menu_items.forEach(item => {
                 const itemDiv = document.createElement('div');
+                itemDiv.className = "products-container"
                 itemDiv.innerHTML = `
+                <div class="products-card">
+                <img src="${item.image_url}" alt="${item.name}">
                     <h4>${item.name}</h4>
-                    <img src="${item.image_url}" alt="${item.name}">
+                    <p>Price: 2.30$</p>
+                    
+                </div>
+                
                 `;
+                // <button onclick="createAddToCartButton(item)">Add to Basket</button>
                 const addToCartButton = createAddToCartButton(item);
                 itemDiv.appendChild(addToCartButton);
                 categoryDiv.appendChild(itemDiv);
             });
 
-            menuSection.appendChild(categoryButton);
-            menuSection.appendChild(categoryDiv);
+            categoryDropdownsContainer.appendChild(categoryDiv);
         }
     }
 
     loadSpecials();
     loadMenu();
+
+    document.getElementById('cart').addEventListener('click', () => {
+        const cartDropdown = document.getElementById('cart-dropdown');
+        cartDropdown.style.display = cartDropdown.style.display === 'none' ? 'block' : 'none';
+    });
 });
+
